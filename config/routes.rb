@@ -6,5 +6,8 @@ Rails.application.routes.draw do
   
   # 上記エラーを対応するために、以下のように修正するとエラーになる
   # get 'foo/:hoge_type/:hoge_id', to: redirect('/foo/%<hoge_type>s/%<hoge_id>s')
-  # get 'foo/:hoge_type/:hoge_id', to: redirect('/foo/%<hoge_type>s/%<hoge_id>d')
+  # get 'foo/:hoge_type/:hoge_id', to: redirect('/foo/%<hoge_type>/%<hoge_id>d')
+
+  # これでも動いてしまう
+  # get 'foo/:hoge_type/:hoge_id', to: redirect('/foo/%{hoge_type}/%<hoge_id>d')
 end
